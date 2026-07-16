@@ -1,411 +1,295 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currículum Vitae</title>
+  <!-- Bulma CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+  <!-- Font Awesome para iconos (opcional, pero mejora el aspecto) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Ajustes personalizados para darle un toque más profesional */
+    body {
+      background-color: #f5f7fa;
+      padding: 2rem 1.5rem;
+    }
+    .cv-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      padding: 2.5rem 2.5rem 2rem;
+    }
+    .cv-header {
+      border-bottom: 1px solid #e8ecf1;
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.8rem;
+    }
+    .cv-header .name {
+      font-size: 2.8rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      color: #1e2b3c;
+      margin-bottom: 0.25rem;
+    }
+    .cv-header .subhead {
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #4a5b6e;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.5rem 1rem;
+    }
+    .cv-header .subhead .links a {
+      color: #3273dc;
+      text-decoration: none;
+      font-weight: 500;
+      margin: 0 0.25rem;
+    }
+    .cv-header .subhead .links a:hover {
+      text-decoration: underline;
+    }
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1e2b3c;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      border-bottom: 2px solid #e8ecf1;
+      padding-bottom: 0.4rem;
+    }
+    .section-title i {
+      margin-right: 0.5rem;
+      color: #3273dc;
+      width: 1.4rem;
+    }
+    .entry {
+      margin-bottom: 1.5rem;
+    }
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 0.2rem;
+    }
+    .entry-header .title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #1e2b3c;
+    }
+    .entry-header .sub {
+      font-weight: 500;
+      color: #4a5b6e;
+    }
+    .entry-header .date {
+      font-size: 0.9rem;
+      color: #6b7a8d;
+      background: #f0f2f5;
+      padding: 0.15rem 0.7rem;
+      border-radius: 20px;
+      font-weight: 400;
+    }
+    .entry-content {
+      color: #2c3e50;
+      font-size: 0.98rem;
+      line-height: 1.5;
+      margin-top: 0.2rem;
+      padding-left: 0.2rem;
+    }
+    .entry-content ul {
+      margin-top: 0.3rem;
+      list-style: disc;
+      padding-left: 1.2rem;
+    }
+    .entry-content ul li {
+      margin-bottom: 0.2rem;
+    }
+    .skills-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 0.8rem;
+      margin-top: 0.3rem;
+    }
+    .skills-tags .tag {
+      background: #edf2f7;
+      color: #1e2b3c;
+      font-size: 0.9rem;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      font-weight: 500;
+      border: 1px solid #dce3ec;
+    }
+    .footer-contact {
+      margin-top: 2.5rem;
+      border-top: 1px solid #e8ecf1;
+      padding-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.8rem 1.5rem;
+      font-size: 0.95rem;
+      color: #2c3e50;
+    }
+    .footer-contact .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .footer-contact .contact-item i {
+      color: #3273dc;
+      width: 1.2rem;
+      text-align: center;
+    }
+    .footer-contact a {
+      color: #3273dc;
+      text-decoration: none;
+    }
+    .footer-contact a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      .cv-container {
+        padding: 1.5rem;
+      }
+      .cv-header .name {
+        font-size: 2.2rem;
+      }
+      .entry-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+      }
+    }
+  </style>
 </head>
-
 <body>
-    <div class="tabs">
-        <ul>
-            <li class="is-active"><a>Pictures</a></li>
-            <li><a>Music</a></li>
-            <li><a>Videos</a></li>
-            <li><a>Documents</a></li>
-        </ul>
-    </div>
-    <table class="table">
-        <thead>
-            <tr>
-                <th><abbr title="Position">Pos</abbr></th>
-                <th>Team</th>
-                <th><abbr title="Played">Pld</abbr></th>
-                <th><abbr title="Won">W</abbr></th>
-                <th><abbr title="Drawn">D</abbr></th>
-                <th><abbr title="Lost">L</abbr></th>
-                <th><abbr title="Goals for">GF</abbr></th>
-                <th><abbr title="Goals against">GA</abbr></th>
-                <th><abbr title="Goal difference">GD</abbr></th>
-                <th><abbr title="Points">Pts</abbr></th>
-                <th>Qualification or relegation</th>
-            </tr>
-        </thead>
-        <tfoot>
-            <tr>
-                <th><abbr title="Position">Pos</abbr></th>
-                <th>Team</th>
-                <th><abbr title="Played">Pld</abbr></th>
-                <th><abbr title="Won">W</abbr></th>
-                <th><abbr title="Drawn">D</abbr></th>
-                <th><abbr title="Lost">L</abbr></th>
-                <th><abbr title="Goals for">GF</abbr></th>
-                <th><abbr title="Goals against">GA</abbr></th>
-                <th><abbr title="Goal difference">GD</abbr></th>
-                <th><abbr title="Points">Pts</abbr></th>
-                <th>Qualification or relegation</th>
-            </tr>
-        </tfoot>
-        <tbody>
-            <tr>
-                <th>1</th>
-                <td>
-                    <a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester
-                        City</a>
-                    <strong>(C)</strong>
-                </td>
-                <td>38</td>
-                <td>23</td>
-                <td>12</td>
-                <td>3</td>
-                <td>68</td>
-                <td>36</td>
-                <td>+32</td>
-                <td>81</td>
-                <td>
-                    Qualification for the
-                    <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage"
-                        title="2016–17 UEFA Champions League">Champions League group stage</a>
-                </td>
-            </tr>
-            <tr>
-                <th>2</th>
-                <td>
-                    <a href="https://en.wikipedia.org/wiki/Arsenal_F.C." title="Arsenal F.C.">Arsenal</a>
-                </td>
-                <td>38</td>
-                <td>20</td>
-                <td>11</td>
-                <td>7</td>
-                <td>65</td>
-                <td>36</td>
-                <td>+29</td>
-                <td>71</td>
-                <td>
-                    Qualification for the
-                    <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage"
-                        title="2016–17 UEFA Champions League">Champions League group stage</a>
-                </td>
-            </tr>
-            <tr>
-                <th>3</th>
-                <td>
-                    <a href="https://en.wikipedia.org/wiki/Tottenham_Hotspur_F.C."
-                        title="Tottenham Hotspur F.C.">Tottenham Hotspur</a>
-                </td>
-                <td>38</td>
-                <td>19</td>
-                <td>13</td>
-                <td>6</td>
-                <td>69</td>
-                <td>35</td>
-                <td>+34</td>
-                <td>70</td>
-                <td>
-                    Qualification for the
-                    <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage"
-                        title="2016–17 UEFA Champions League">Champions League group stage</a>
-                </td>
-            </tr>
-            <tr class="is-selected">
-                <th>4</th>
-                <td>
-                    <a href="https://en.wikipedia.org/wiki/Manchester_City_F.C." title="Manchester City F.C.">Manchester
-                        City</a>
-                </td>
-                <td>38</td>
-                <td>19</td>
-                <td>9</td>
-                <td>10</td>
-                <td>71</td>
-                <td>41</td>
-                <td>+30</td>
-                <td>66</td>
-                <td>
-                    Qualification for the
-                    <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Play-off_round"
-                        title="2016–17 UEFA Champions League">Champions League play-off round</a>
-                </td>
-            </tr>
-            <tr>
-                <th>5</th>
-                <td>
-                    <a href="https://en.wikipedia.org/wiki/Manchester_United_F.C."
-                        title="Manchester United F.C.">Manchester United</a>
-                </td>
-                <td>38</td>
-                <td>19</td>
-                <td>9</td>
-                <td>10</td>
-                <td>49</td>
-                <td>35</td>
-                <td>+14</td>
-                <td>66</td>
-                <td>
-                    Qualification for the
-                    <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Europa_League#Group_stage"
-                        title="2016–17 UEFA Europa League">Europa League group stage</a>
-                </td>
-            </tr>
-            <tr>
-                <th>6</th>
-                <td>
-                    <a href="https://en.wikipedia.org/wiki/Southampton_F.C." title="Southampton F.C.">Southampton</a>
-                </td>
-                <td>38</td>
-                <td>18</td>
-                <td>9</td>
-                <td>11</td>
-                <td>59</td>
-                <td>41</td>
-                <td>+18</td>
-                <td>63</td>
-                <td>
-                    Qualification for the
-                    <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Europa_League#Group_stage"
-                        title="2016–17 UEFA Europa League">Europa League group stage</a>
-                </td>
-            </tr>
-            <tr>
-                <th>7</th>
-                <td>
-                    <a href="https://en.wikipedia.org/wiki/West_Ham_United_F.C." title="West Ham United F.C.">West Ham
-                        United</a>
-                </td>
-                <td>38</td>
-                <td>16</td>
-                <td>14</td>
-                <td>8</td>
-                <td>65</td>
-                <td>51</td>
-                <td>+14</td>
-                <td>62</td>
-                <td>
-                    Qualification for the
-                    <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Europa_League#Third_qualifying_round"
-                        title="2016–17 UEFA Europa League">Europa League third qualifying round</a>
-                </td>
-            </tr>
-            <tr>
-                <th>8</th>
-                <td>
-                    <a href="https://en.wikipedia.org/wiki/Liverpool_F.C." title="Liverpool F.C.">Liverpool</a>
-                </td>
-                <td>38</td>
-                <td>16</td>
-                <td>12</td>
-                <td>10</td>
-                <td>63</td>
-                <td>50</td>
-                <td>+13</td>
-                <td>60</td>
-                <td></td>
-            </tr>
-            <tr>
-                <th>9</th>
-                <td>
-                    <a href="https://en.wikipedia.org/wiki/Stoke_City_F.C." title="Stoke City F.C.">Stoke City</a>
-                </td>
-                <td>38</td>
-                <td>14</td>
-                <td>9</td>
-                <td>15</td>
-                <td>41</td>
-                <td>55</td>
-                <td>−14</td>
-                <td>51</td>
-                <td></td>
-            </tr>
-            <tr>
-                <th>10</th>
-                <td>
-                    <a href="https://en.wikipedia.org/wiki/Chelsea_F.C." title="Chelsea F.C.">Chelsea</a>
-                </td>
-                <td>38</td>
-                <td>12</td>
-                <td>14</td>
-                <td>12</td>
-                <td>59</td>
-                <td>53</td>
-                <td>+6</td>
-                <td>50</td>
-                <td></td>
-            </tr>
-            <tr>
-                <th>11</th>
-                <td>
-                    <a href="https://en.wikipedia.org/wiki/Everton_F.C." title="Everton F.C.">Everton</a>
-                </td>
-                <td>38</td>
-                <td>11</td>
-                <td>14</td>
-                <td>13</td>
-                <td>59</td>
-                <td>55</td>
-                <td>+4</td>
-                <td>47</td>
-                <td></td>
-            </tr>
-            <tr>
-                <th>12</th>
-                <td>
-                    <a href="https://en.wikipedia.org/wiki/Swansea_City_A.F.C." title="Swansea City A.F.C.">Swansea
-                        City</a>
-                </td>
-                <td>38</td>
-                <td>12</td>
-                <td>11</td>
-                <td>15</td>
-                <td>42</td>
-                <td>52</td>
-                <td>−10</td>
-                <td>47</td>
-                <td></td>
-            </tr>
-            <tr>
-                <th>13</th>
-                <td>
-                    <a href="https://en.wikipedia.org/wiki/Watford_F.C." title="Watford F.C.">Watford</a>
-                </td>
-                <td>38</td>
-                <td>12</td>
-                <td>9</td>
-                <td>17</td>
-                <td>40</td>
-                <td>50</td>
-                <td>−10</td>
-                <td>45</td>
-                <td></td>
-            </tr>
-            <tr>
-                <th>14</th>
-                <td>
-                    <a href="https://en.wikipedia.org/wiki/West_Bromwich_Albion_F.C."
-                        title="West Bromwich Albion F.C.">West Bromwich Albion</a>
-                </td>
-                <td>38</td>
-                <td>10</td>
-                <td>13</td>
-                <td>15</td>
-                <td>34</td>
-                <td>48</td>
-                <td>−14</td>
-                <td>43</td>
-                <td></td>
-            </tr>
-            <tr>
-                <th>15</th>
-                <td>
-                    <a href="https://en.wikipedia.org/wiki/Crystal_Palace_F.C." title="Crystal Palace F.C.">Crystal
-                        Palace</a>
-                </td>
-                <td>38</td>
-                <td>11</td>
-                <td>9</td>
-                <td>18</td>
-                <td>39</td>
-                <td>51</td>
-                <td>−12</td>
-                <td>42</td>
-                <td></td>
-            </tr>
-            <tr>
-                <th>16</th>
-                <td>
-                    <a href="https://en.wikipedia.org/wiki/A.F.C._Bournemouth" title="A.F.C. Bournemouth">AFC
-                        Bournemouth</a>
-                </td>
-                <td>38</td>
-                <td>11</td>
-                <td>9</td>
-                <td>18</td>
-                <td>45</td>
-                <td>67</td>
-                <td>−22</td>
-                <td>42</td>
-                <td></td>
-            </tr>
-            <tr>
-                <th>17</th>
-                <td>
-                    <a href="https://en.wikipedia.org/wiki/Sunderland_A.F.C." title="Sunderland A.F.C.">Sunderland</a>
-                </td>
-                <td>38</td>
-                <td>9</td>
-                <td>12</td>
-                <td>17</td>
-                <td>48</td>
-                <td>62</td>
-                <td>−14</td>
-                <td>39</td>
-                <td></td>
-            </tr>
-            <tr>
-                <th>18</th>
-                <td>
-                    <a href="https://en.wikipedia.org/wiki/Newcastle_United_F.C."
-                        title="Newcastle United F.C.">Newcastle United</a>
-                    <strong>(R)</strong>
-                </td>
-                <td>38</td>
-                <td>9</td>
-                <td>10</td>
-                <td>19</td>
-                <td>44</td>
-                <td>65</td>
-                <td>−21</td>
-                <td>37</td>
-                <td>
-                    Relegation to the
-                    <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_Football_League_Championship"
-                        title="2016–17 Football League Championship">Football League Championship</a>
-                </td>
-            </tr>
-            <tr>
-                <th>19</th>
-                <td>
-                    <a href="https://en.wikipedia.org/wiki/Norwich_City_F.C." title="Norwich City F.C.">Norwich City</a>
-                    <strong>(R)</strong>
-                </td>
-                <td>38</td>
-                <td>9</td>
-                <td>7</td>
-                <td>22</td>
-                <td>39</td>
-                <td>67</td>
-                <td>−28</td>
-                <td>34</td>
-                <td>
-                    Relegation to the
-                    <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_Football_League_Championship"
-                        title="2016–17 Football League Championship">Football League Championship</a>
-                </td>
-            </tr>
-            <tr>
-                <th>20</th>
-                <td>
-                    <a href="https://en.wikipedia.org/wiki/Aston_Villa_F.C." title="Aston Villa F.C.">Aston Villa</a>
-                    <strong>(R)</strong>
-                </td>
-                <td>38</td>
-                <td>3</td>
-                <td>8</td>
-                <td>27</td>
-                <td>27</td>
-                <td>76</td>
-                <td>−49</td>
-                <td>17</td>
-                <td>
-                    Relegation to the
-                    <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_Football_League_Championship"
-                        title="2016–17 Football League Championship">Football League Championship</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+  <div class="cv-container">
+    <!-- ENCABEZADO: NOMBRE + PROFESIÓN + LINKS -->
+    <header class="cv-header">
+      <div class="name">SU NOMBRE</div>
+      <div class="subhead">
+        <span><strong>PROFESIÓN O SECTOR</strong></span>
+        <span class="links">
+          <a href="#"><i class="fas fa-briefcase"></i> cartera</a>
+          <a href="#"><i class="fas fa-globe"></i> sitio web</a>
+          <a href="#"><i class="fas fa-blog"></i> blog</a>
+        </span>
+      </div>
+    </header>
 
+    <!-- OBJETIVO -->
+    <section class="section-obj">
+      <div class="section-title"><i class="fas fa-bullseye"></i> OBJETIVO</div>
+      <div class="entry-content" style="margin-bottom: 1.8rem;">
+        Para empezar, haga clic en el texto de marcador de posición y empiece a escribir. Sea breve: una o dos frases.
+        Haga doble clic en las celdas de la tabla del pie de página para agregar la información de contacto (o elimine las columnas que no desee).
+      </div>
+    </section>
+
+    <!-- APTITUDES -->
+    <section class="section-skills">
+      <div class="section-title"><i class="fas fa-star"></i> APTITUDES</div>
+      <div class="entry-content" style="margin-bottom: 1.8rem;">
+        <p>Explique en qué es especialmente bueno. ¿Qué es lo que lo diferencia? Use su propio idioma, no jergas.</p>
+        <div class="skills-tags">
+          <span class="tag">Comunicación</span>
+          <span class="tag">Liderazgo</span>
+          <span class="tag">Resolución de problemas</span>
+          <span class="tag">Trabajo en equipo</span>
+          <span class="tag">Adaptabilidad</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCIA -->
+    <section class="section-experience">
+      <div class="section-title"><i class="fas fa-briefcase"></i> EXPERIENCIA</div>
+      
+      <div class="entry">
+        <div class="entry-header">
+          <span class="title">PUESTO • COMPAÑÍA</span>
+          <span class="date">FECHA DE INICIO – FECHA DE FINALIZACIÓN</span>
+        </div>
+        <div class="entry-content">
+          Realice un resumen de sus responsabilidades principales, de sus cargos directivos y de sus logros más destacados. No lo indique todo; incluya solo los datos relevantes que muestren la eficacia de su trabajo.
+          <ul>
+            <li>Logro clave 1: impacto medible o responsabilidad relevante.</li>
+            <li>Logro clave 2: liderazgo de equipos o proyectos importantes.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="title">PUESTO • COMPAÑÍA</span>
+          <span class="date">FECHA DE INICIO – FECHA DE FINALIZACIÓN</span>
+        </div>
+        <div class="entry-content">
+          Piense en el tamaño del equipo que ha dirigido, el número de proyectos en los que ha trabajado o el número de artículos que ha escrito.
+          <ul>
+            <li>Dirección de equipo de X personas.</li>
+            <li>Más de Y proyectos completados con éxito.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMACIÓN -->
+    <section class="section-education">
+      <div class="section-title"><i class="fas fa-graduation-cap"></i> FORMACIÓN</div>
+      
+      <div class="entry">
+        <div class="entry-header">
+          <span class="title">TITULACIÓN • CENTRO EDUCATIVO</span>
+          <span class="date">FECHA DE OBTENCIÓN</span>
+        </div>
+        <div class="entry-content">
+          Puede incluir su calificación promedio y un resumen de los trabajos de clase, los premios y las matrículas de honor relevantes.
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="title">TITULACIÓN • CENTRO EDUCATIVO</span>
+          <span class="date">FECHA DE OBTENCIÓN</span>
+        </div>
+        <div class="entry-content">
+          Vaya al grupo Estilos, que encontrará en la pestaña Inicio de la cinta de opciones, para aplicar el formato que necesite en un simple clic.
+        </div>
+      </div>
+    </section>
+
+    <!-- VOLUNTARIADO / DIRECCIÓN -->
+    <section class="section-volunteer">
+      <div class="section-title"><i class="fas fa-hand-holding-heart"></i> VOLUNTARIADO O DIRECCIÓN</div>
+      <div class="entry-content" style="margin-bottom: 0.2rem;">
+        ¿Ha administrado un equipo de un club, liderado un proyecto para su organización benéfica favorita o ha editado el periódico de su centro educativo? Prosiga y describa las experiencias que ilustran sus habilidades de dirección.
+      </div>
+      <div class="entry" style="margin-top: 0.8rem;">
+        <div class="entry-header">
+          <span class="title">ROL • ORGANIZACIÓN</span>
+          <span class="date">AÑO – AÑO</span>
+        </div>
+        <div class="entry-content">
+          Breve descripción de su contribución y el impacto generado.
+        </div>
+      </div>
+    </section>
+
+    <!-- PIE DE PÁGINA: CONTACTO (similar a la tabla del footer) -->
+    <footer class="footer-contact">
+      <span class="contact-item"><i class="fas fa-phone-alt"></i> +34 123 456 789</span>
+      <span class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:tu@email.com">tu@email.com</a></span>
+      <span class="contact-item"><i class="fab fa-linkedin"></i> <a href="#">linkedin.com/in/tuperfil</a></span>
+      <span class="contact-item"><i class="fab fa-github"></i> <a href="#">github.com/tuusuario</a></span>
+      <span class="contact-item"><i class="fas fa-map-pin"></i> Ciudad, País</span>
+    </footer>
+    <!-- Nota: puedes eliminar o modificar las columnas de contacto que no desees -->
+  </div>
 </body>
-
 </html>
