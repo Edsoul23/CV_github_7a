@@ -4,91 +4,152 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currículum Vitae</title>
-    <!-- SOLO Bulma para la estructura base, SIN estilos adicionales -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* RESET COMPLETO - EMPEZAMOS DESDE CERO */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            background: #e8ecf1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
             padding: 40px 20px;
             font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        /* CONTENEDOR PRINCIPAL - SIMPLE Y LIMPIO */
         .cv {
-            max-width: 820px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 45px 55px 40px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            max-width: 1000px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 300px 1fr;
         }
 
-        /* ===== ENCABEZADO ===== */
-        .nombre {
-            font-size: 42px;
+        /* ===== COLUMNA IZQUIERDA ===== */
+        .cv-izquierda {
+            background: #2d3436;
+            color: #dfe6e9;
+            padding: 40px 30px;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+            border: 4px solid #667eea;
+        }
+
+        .cv-izquierda .nombre {
+            font-size: 24px;
             font-weight: 700;
-            color: #000000;
-            letter-spacing: -0.3px;
-            margin-bottom: 2px;
-            line-height: 1.1;
+            color: white;
+            text-align: center;
+            margin-bottom: 5px;
         }
 
-        .profesion {
-            font-size: 16px;
-            font-weight: 500;
-            color: #1a1a1a;
-            margin-bottom: 1px;
+        .cv-izquierda .profesion {
+            font-size: 14px;
+            color: #b2bec3;
+            text-align: center;
+            margin-bottom: 25px;
+            line-height: 1.4;
         }
 
-        .profesion a {
-            color: #0066cc;
+        .cv-izquierda .profesion a {
+            color: #667eea;
             text-decoration: none;
         }
 
-        .profesion a:hover {
-            text-decoration: underline;
-        }
-
-        .linea-separadora {
-            border: none;
-            border-top: 2px solid #c0c8d4;
-            margin: 16px 0 22px 0;
-        }
-
-        /* ===== SECCIONES ===== */
-        .seccion {
-            margin-bottom: 26px;
-        }
-
-        .titulo-seccion {
-            font-size: 18px;
+        .cv-izquierda .seccion-titulo {
+            font-size: 13px;
             font-weight: 700;
-            color: #000000;
             text-transform: uppercase;
-            letter-spacing: 0.3px;
-            border-bottom: 1px solid #c0c8d4;
-            padding-bottom: 4px;
+            letter-spacing: 1px;
+            color: #b2bec3;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 8px;
+            margin: 25px 0 15px 0;
+        }
+
+        .cv-izquierda .texto {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #dfe6e9;
+        }
+
+        .contacto-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: #dfe6e9;
             margin-bottom: 10px;
         }
 
-        .texto-seccion {
-            font-size: 15px;
-            line-height: 1.6;
-            color: #1a1a1a;
+        .contacto-item i {
+            width: 20px;
+            color: #667eea;
+            font-size: 16px;
         }
 
-        .texto-seccion small {
-            font-size: 14px;
-            color: #555;
+        .contacto-item a {
+            color: #667eea;
+            text-decoration: none;
         }
 
-        /* ===== ENTRADAS ===== */
+        .contacto-item a:hover {
+            text-decoration: underline;
+        }
+
+        .habilidad-tag {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin: 3px 4px 3px 0;
+        }
+
+        /* ===== COLUMNA DERECHA ===== */
+        .cv-derecha {
+            padding: 40px 35px;
+            background: white;
+        }
+
+        .cv-derecha .seccion-titulo {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2d3436;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 8px;
+            margin: 25px 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cv-derecha .seccion-titulo i {
+            color: #667eea;
+            font-size: 20px;
+        }
+
+        .cv-derecha .seccion-titulo:first-of-type {
+            margin-top: 0;
+        }
+
         .entrada {
             margin-bottom: 18px;
         }
@@ -96,50 +157,48 @@
         .entrada-titulo {
             font-weight: 700;
             font-size: 15px;
-            color: #000000;
-            margin-bottom: 2px;
+            color: #2d3436;
+            margin-bottom: 3px;
+        }
+
+        .entrada-fecha {
+            font-size: 13px;
+            color: #667eea;
+            font-weight: 600;
         }
 
         .entrada-descripcion {
-            font-size: 15px;
-            line-height: 1.5;
-            color: #1a1a1a;
-        }
-
-        /* ===== PIE DE CONTACTO ===== */
-        .contacto {
-            margin-top: 30px;
-            padding-top: 18px;
-            border-top: 2px solid #c0c8d4;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px 28px;
             font-size: 14px;
-            color: #1a1a1a;
+            line-height: 1.6;
+            color: #636e72;
+            margin-top: 3px;
         }
 
-        .contacto-item {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
+        .texto-seccion {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #636e72;
         }
 
-        .contacto a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-
-        .contacto a:hover {
-            text-decoration: underline;
+        .texto-seccion small {
+            font-size: 13px;
+            color: #b2bec3;
         }
 
         /* ===== RESPONSIVE ===== */
-        @media (max-width: 650px) {
+        @media (max-width: 768px) {
             .cv {
+                grid-template-columns: 1fr;
+                border-radius: 12px;
+            }
+            .cv-izquierda {
                 padding: 30px 25px;
             }
-            .nombre {
-                font-size: 32px;
+            .cv-derecha {
+                padding: 30px 25px;
+            }
+            body {
+                padding: 20px 15px;
             }
         }
     </style>
@@ -148,99 +207,106 @@
 
 <div class="cv">
 
-    <!-- ============================================================ -->
-    <!-- ENCABEZADO -->
-    <!-- ============================================================ -->
-    <div class="nombre">SU NOMBRE</div>
-    <div class="profesion">
-        <strong>PROFESIÓN O SECTOR | VÍNCULO A OTRAS PROPIEDADES EN LÍNEA:</strong>
-        <a href="#">cartera</a>, <a href="#">sitio web</a> o <a href="#">blog</a>
+    <!-- ===== COLUMNA IZQUIERDA ===== -->
+    <div class="cv-izquierda">
+
+        <div class="avatar">
+            <i class="fas fa-user"></i>
+        </div>
+
+        <div class="nombre">SU NOMBRE</div>
+        <div class="profesion">
+            <strong>PROFESIÓN O SECTOR</strong><br>
+            <a href="#">cartera</a> · <a href="#">sitio web</a> · <a href="#">blog</a>
+        </div>
+
+        <!-- CONTACTO -->
+        <div class="seccion-titulo"><i class="fas fa-address-card"></i> CONTACTO</div>
+        <div class="contacto-item">
+            <i class="fas fa-phone"></i> +34 123 456 789
+        </div>
+        <div class="contacto-item">
+            <i class="fas fa-envelope"></i> <a href="mailto:tu@email.com">tu@email.com</a>
+        </div>
+        <div class="contacto-item">
+            <i class="fab fa-linkedin"></i> <a href="#">linkedin.com/in/tuperfil</a>
+        </div>
+        <div class="contacto-item">
+            <i class="fab fa-github"></i> <a href="#">github.com/tuusuario</a>
+        </div>
+        <div class="contacto-item">
+            <i class="fas fa-map-marker-alt"></i> Ciudad, País
+        </div>
+
+        <!-- APTITUDES -->
+        <div class="seccion-titulo"><i class="fas fa-star"></i> APTITUDES</div>
+        <div class="texto" style="margin-bottom: 12px;">
+            Explique en qué es especialmente bueno. ¿Qué es lo que lo diferencia? Use su propio idioma, no jergas.
+        </div>
+        <div>
+            <span class="habilidad-tag">Comunicación</span>
+            <span class="habilidad-tag">Liderazgo</span>
+            <span class="habilidad-tag">Resolución</span>
+            <span class="habilidad-tag">Trabajo en equipo</span>
+            <span class="habilidad-tag">Creatividad</span>
+        </div>
+
     </div>
 
-    <hr class="linea-separadora">
+    <!-- ===== COLUMNA DERECHA ===== -->
+    <div class="cv-derecha">
 
-    <!-- ============================================================ -->
-    <!-- OBJETIVO -->
-    <!-- ============================================================ -->
-    <div class="seccion">
-        <div class="titulo-seccion">OBJETIVO</div>
+        <!-- OBJETIVO -->
+        <div class="seccion-titulo"><i class="fas fa-bullseye"></i> OBJETIVO</div>
         <div class="texto-seccion">
             Para empezar, haga clic en el texto de marcador de posición y empiece a escribir. Sea breve: una o dos frases.<br>
             <small>Haga doble clic en las celdas de la tabla del pie de página para agregar la información de contacto (o elimine las columnas que no desee).</small>
         </div>
-    </div>
 
-    <!-- ============================================================ -->
-    <!-- APTITUDES -->
-    <!-- ============================================================ -->
-    <div class="seccion">
-        <div class="titulo-seccion">APTITUDES</div>
-        <div class="texto-seccion">
-            Explique en qué es especialmente bueno. ¿Qué es lo que lo diferencia? Use su propio idioma, no jergas.
-        </div>
-    </div>
-
-    <!-- ============================================================ -->
-    <!-- EXPERIENCIA -->
-    <!-- ============================================================ -->
-    <div class="seccion">
-        <div class="titulo-seccion">EXPERIENCIA</div>
+        <!-- EXPERIENCIA -->
+        <div class="seccion-titulo"><i class="fas fa-briefcase"></i> EXPERIENCIA</div>
 
         <div class="entrada">
-            <div class="entrada-titulo">PUESTO • COMPAÑÍA • FECHA DE INICIO – FECHA DE FINALIZACIÓN</div>
+            <div class="entrada-titulo">PUESTO • COMPAÑÍA</div>
+            <div class="entrada-fecha">FECHA DE INICIO – FECHA DE FINALIZACIÓN</div>
             <div class="entrada-descripcion">
                 Realice un resumen de sus responsabilidades principales, de sus cargos directivos y de sus logros más destacados. No lo indique todo; incluya solo los datos relevantes que muestren la eficacia de su trabajo.
             </div>
         </div>
 
         <div class="entrada">
-            <div class="entrada-titulo">PUESTO • COMPAÑÍA • FECHA DE INICIO – FECHA DE FINALIZACIÓN</div>
+            <div class="entrada-titulo">PUESTO • COMPAÑÍA</div>
+            <div class="entrada-fecha">FECHA DE INICIO – FECHA DE FINALIZACIÓN</div>
             <div class="entrada-descripcion">
                 Piense en el tamaño del equipo que ha dirigido, el número de proyectos en los que ha trabajado o el número de artículos que ha escrito.
             </div>
         </div>
-    </div>
 
-    <!-- ============================================================ -->
-    <!-- FORMACIÓN -->
-    <!-- ============================================================ -->
-    <div class="seccion">
-        <div class="titulo-seccion">FORMACIÓN</div>
+        <!-- FORMACIÓN -->
+        <div class="seccion-titulo"><i class="fas fa-graduation-cap"></i> FORMACIÓN</div>
 
         <div class="entrada">
-            <div class="entrada-titulo">TITULACIÓN • FECHA DE OBTENCIÓN • CENTRO EDUCATIVO</div>
+            <div class="entrada-titulo">TITULACIÓN • CENTRO EDUCATIVO</div>
+            <div class="entrada-fecha">FECHA DE OBTENCIÓN</div>
             <div class="entrada-descripcion">
                 Puede incluir su calificación promedio y un resumen de los trabajos de clase, los premios y las matrículas de honor relevantes.
             </div>
         </div>
 
         <div class="entrada">
-            <div class="entrada-titulo">TITULACIÓN • FECHA DE OBTENCIÓN • CENTRO EDUCATIVO</div>
+            <div class="entrada-titulo">TITULACIÓN • CENTRO EDUCATIVO</div>
+            <div class="entrada-fecha">FECHA DE OBTENCIÓN</div>
             <div class="entrada-descripcion">
                 Vaya al grupo Estilos, que encontrará en la pestaña Inicio de la cinta de opciones, para aplicar el formato que necesite en un simple clic.
             </div>
         </div>
-    </div>
 
-    <!-- ============================================================ -->
-    <!-- VOLUNTARIADO -->
-    <!-- ============================================================ -->
-    <div class="seccion">
-        <div class="titulo-seccion">EXPERIENCIA DE VOLUNTARIADO O DIRECCIÓN</div>
+        <!-- VOLUNTARIADO -->
+        <div class="seccion-titulo"><i class="fas fa-hand-holding-heart"></i> VOLUNTARIADO O DIRECCIÓN</div>
         <div class="texto-seccion">
             ¿Ha administrado un equipo de un club, liderado un proyecto para su organización benéfica favorita o ha editado el periódico de su centro educativo? Prosiga y describa las experiencias que ilustran sus habilidades de dirección.
         </div>
-    </div>
 
-    <!-- ============================================================ -->
-    <!-- PIE DE CONTACTO -->
-    <!-- ============================================================ -->
-    <div class="contacto">
-        <span class="contacto-item">📞 +34 123 456 789</span>
-        <span class="contacto-item">✉️ <a href="mailto:tu@email.com">tu@email.com</a></span>
-        <span class="contacto-item">🔗 <a href="#">linkedin.com/in/tuperfil</a></span>
-        <span class="contacto-item">🐙 <a href="#">github.com/tuusuario</a></span>
-        <span class="contacto-item">📍 Ciudad, País</span>
     </div>
 
 </div>
