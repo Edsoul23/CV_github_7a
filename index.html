@@ -4,82 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currículum Vitae</title>
+    <!-- SOLO Bulma para la estructura base, SIN estilos adicionales -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
     <style>
-        /* ESTILOS MÍNIMOS - SOLO LO ESENCIAL */
+        /* RESET COMPLETO - EMPEZAMOS DESDE CERO */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            background: #f0f2f5;
+            background: #e8ecf1;
             padding: 40px 20px;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
         }
 
+        /* CONTENEDOR PRINCIPAL - SIMPLE Y LIMPIO */
         .cv {
-            max-width: 850px;
+            max-width: 820px;
             margin: 0 auto;
-            background: white;
-            padding: 50px 55px 40px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+            background: #ffffff;
+            padding: 45px 55px 40px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
         }
 
-        /* NOMBRE - GRANDE Y NEGRITA */
+        /* ===== ENCABEZADO ===== */
         .nombre {
-            font-size: 44px;
+            font-size: 42px;
             font-weight: 700;
-            color: #000;
+            color: #000000;
+            letter-spacing: -0.3px;
             margin-bottom: 2px;
-            letter-spacing: -0.5px;
+            line-height: 1.1;
         }
 
-        /* SUBTÍTULO CON LINKS */
-        .subtitulo {
+        .profesion {
             font-size: 16px;
             font-weight: 500;
-            color: #222;
-            margin-bottom: 2px;
+            color: #1a1a1a;
+            margin-bottom: 1px;
         }
 
-        .subtitulo a {
+        .profesion a {
             color: #0066cc;
             text-decoration: none;
         }
 
-        .subtitulo a:hover {
+        .profesion a:hover {
             text-decoration: underline;
         }
 
-        /* LÍNEA SEPARADORA - IGUAL A LA IMAGEN */
-        .linea {
+        .linea-separadora {
             border: none;
-            border-top: 2px solid #ccc;
-            margin: 18px 0 22px 0;
+            border-top: 2px solid #c0c8d4;
+            margin: 16px 0 22px 0;
         }
 
-        /* TÍTULOS DE SECCIÓN - MAYÚSCULAS Y SUBRAYADO */
+        /* ===== SECCIONES ===== */
+        .seccion {
+            margin-bottom: 26px;
+        }
+
         .titulo-seccion {
             font-size: 18px;
             font-weight: 700;
-            color: #000;
+            color: #000000;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 5px;
+            letter-spacing: 0.3px;
+            border-bottom: 1px solid #c0c8d4;
+            padding-bottom: 4px;
             margin-bottom: 10px;
         }
 
-        /* TEXTO NORMAL */
-        .texto {
+        .texto-seccion {
             font-size: 15px;
             line-height: 1.6;
-            color: #222;
-            margin-bottom: 6px;
+            color: #1a1a1a;
         }
 
-        .texto-pequeño {
+        .texto-seccion small {
             font-size: 14px;
             color: #555;
         }
 
-        /* ENTRADAS DE EXPERIENCIA Y FORMACIÓN */
+        /* ===== ENTRADAS ===== */
         .entrada {
             margin-bottom: 18px;
         }
@@ -87,32 +96,32 @@
         .entrada-titulo {
             font-weight: 700;
             font-size: 15px;
-            color: #000;
+            color: #000000;
             margin-bottom: 2px;
         }
 
         .entrada-descripcion {
             font-size: 15px;
             line-height: 1.5;
-            color: #222;
+            color: #1a1a1a;
         }
 
-        /* PIE DE CONTACTO - COMO TABLA */
+        /* ===== PIE DE CONTACTO ===== */
         .contacto {
             margin-top: 30px;
             padding-top: 18px;
-            border-top: 2px solid #ccc;
+            border-top: 2px solid #c0c8d4;
             display: flex;
             flex-wrap: wrap;
-            gap: 12px 30px;
+            gap: 8px 28px;
             font-size: 14px;
-            color: #222;
+            color: #1a1a1a;
         }
 
-        .contacto span {
+        .contacto-item {
             display: inline-flex;
             align-items: center;
-            gap: 5px;
+            gap: 4px;
         }
 
         .contacto a {
@@ -124,10 +133,14 @@
             text-decoration: underline;
         }
 
-        /* RESPONSIVE */
-        @media (max-width: 700px) {
-            .cv { padding: 30px 20px; }
-            .nombre { font-size: 34px; }
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 650px) {
+            .cv {
+                padding: 30px 25px;
+            }
+            .nombre {
+                font-size: 32px;
+            }
         }
     </style>
 </head>
@@ -135,75 +148,99 @@
 
 <div class="cv">
 
-    <!-- ===== ENCABEZADO ===== -->
+    <!-- ============================================================ -->
+    <!-- ENCABEZADO -->
+    <!-- ============================================================ -->
     <div class="nombre">SU NOMBRE</div>
-    <div class="subtitulo">
+    <div class="profesion">
         <strong>PROFESIÓN O SECTOR | VÍNCULO A OTRAS PROPIEDADES EN LÍNEA:</strong>
         <a href="#">cartera</a>, <a href="#">sitio web</a> o <a href="#">blog</a>
     </div>
 
-    <hr class="linea">
+    <hr class="linea-separadora">
 
-    <!-- ===== OBJETIVO ===== -->
-    <div class="titulo-seccion">OBJETIVO</div>
-    <div class="texto">
-        Para empezar, haga clic en el texto de marcador de posición y empiece a escribir. Sea breve: una o dos frases.<br>
-        <span class="texto-pequeño">Haga doble clic en las celdas de la tabla del pie de página para agregar la información de contacto (o elimine las columnas que no desee).</span>
-    </div>
-
-    <!-- ===== APTITUDES ===== -->
-    <div class="titulo-seccion" style="margin-top: 28px;">APTITUDES</div>
-    <div class="texto">
-        Explique en qué es especialmente bueno. ¿Qué es lo que lo diferencia? Use su propio idioma, no jergas.
-    </div>
-
-    <!-- ===== EXPERIENCIA ===== -->
-    <div class="titulo-seccion" style="margin-top: 28px;">EXPERIENCIA</div>
-
-    <div class="entrada">
-        <div class="entrada-titulo">PUESTO • COMPAÑÍA • FECHA DE INICIO – FECHA DE FINALIZACIÓN</div>
-        <div class="entrada-descripcion">
-            Realice un resumen de sus responsabilidades principales, de sus cargos directivos y de sus logros más destacados. No lo indique todo; incluya solo los datos relevantes que muestren la eficacia de su trabajo.
+    <!-- ============================================================ -->
+    <!-- OBJETIVO -->
+    <!-- ============================================================ -->
+    <div class="seccion">
+        <div class="titulo-seccion">OBJETIVO</div>
+        <div class="texto-seccion">
+            Para empezar, haga clic en el texto de marcador de posición y empiece a escribir. Sea breve: una o dos frases.<br>
+            <small>Haga doble clic en las celdas de la tabla del pie de página para agregar la información de contacto (o elimine las columnas que no desee).</small>
         </div>
     </div>
 
-    <div class="entrada">
-        <div class="entrada-titulo">PUESTO • COMPAÑÍA • FECHA DE INICIO – FECHA DE FINALIZACIÓN</div>
-        <div class="entrada-descripcion">
-            Piense en el tamaño del equipo que ha dirigido, el número de proyectos en los que ha trabajado o el número de artículos que ha escrito.
+    <!-- ============================================================ -->
+    <!-- APTITUDES -->
+    <!-- ============================================================ -->
+    <div class="seccion">
+        <div class="titulo-seccion">APTITUDES</div>
+        <div class="texto-seccion">
+            Explique en qué es especialmente bueno. ¿Qué es lo que lo diferencia? Use su propio idioma, no jergas.
         </div>
     </div>
 
-    <!-- ===== FORMACIÓN ===== -->
-    <div class="titulo-seccion" style="margin-top: 28px;">FORMACIÓN</div>
+    <!-- ============================================================ -->
+    <!-- EXPERIENCIA -->
+    <!-- ============================================================ -->
+    <div class="seccion">
+        <div class="titulo-seccion">EXPERIENCIA</div>
 
-    <div class="entrada">
-        <div class="entrada-titulo">TITULACIÓN • FECHA DE OBTENCIÓN • CENTRO EDUCATIVO</div>
-        <div class="entrada-descripcion">
-            Puede incluir su calificación promedio y un resumen de los trabajos de clase, los premios y las matrículas de honor relevantes.
+        <div class="entrada">
+            <div class="entrada-titulo">PUESTO • COMPAÑÍA • FECHA DE INICIO – FECHA DE FINALIZACIÓN</div>
+            <div class="entrada-descripcion">
+                Realice un resumen de sus responsabilidades principales, de sus cargos directivos y de sus logros más destacados. No lo indique todo; incluya solo los datos relevantes que muestren la eficacia de su trabajo.
+            </div>
+        </div>
+
+        <div class="entrada">
+            <div class="entrada-titulo">PUESTO • COMPAÑÍA • FECHA DE INICIO – FECHA DE FINALIZACIÓN</div>
+            <div class="entrada-descripcion">
+                Piense en el tamaño del equipo que ha dirigido, el número de proyectos en los que ha trabajado o el número de artículos que ha escrito.
+            </div>
         </div>
     </div>
 
-    <div class="entrada">
-        <div class="entrada-titulo">TITULACIÓN • FECHA DE OBTENCIÓN • CENTRO EDUCATIVO</div>
-        <div class="entrada-descripcion">
-            Vaya al grupo Estilos, que encontrará en la pestaña Inicio de la cinta de opciones, para aplicar el formato que necesite en un simple clic.
+    <!-- ============================================================ -->
+    <!-- FORMACIÓN -->
+    <!-- ============================================================ -->
+    <div class="seccion">
+        <div class="titulo-seccion">FORMACIÓN</div>
+
+        <div class="entrada">
+            <div class="entrada-titulo">TITULACIÓN • FECHA DE OBTENCIÓN • CENTRO EDUCATIVO</div>
+            <div class="entrada-descripcion">
+                Puede incluir su calificación promedio y un resumen de los trabajos de clase, los premios y las matrículas de honor relevantes.
+            </div>
+        </div>
+
+        <div class="entrada">
+            <div class="entrada-titulo">TITULACIÓN • FECHA DE OBTENCIÓN • CENTRO EDUCATIVO</div>
+            <div class="entrada-descripcion">
+                Vaya al grupo Estilos, que encontrará en la pestaña Inicio de la cinta de opciones, para aplicar el formato que necesite en un simple clic.
+            </div>
         </div>
     </div>
 
-    <!-- ===== VOLUNTARIADO ===== -->
-    <div class="titulo-seccion" style="margin-top: 28px;">EXPERIENCIA DE VOLUNTARIADO O DIRECCIÓN</div>
-    <div class="texto">
-        ¿Ha administrado un equipo de un club, liderado un proyecto para su organización benéfica favorita o ha editado el periódico de su centro educativo? Prosiga y describa las experiencias que ilustran sus habilidades de dirección.
+    <!-- ============================================================ -->
+    <!-- VOLUNTARIADO -->
+    <!-- ============================================================ -->
+    <div class="seccion">
+        <div class="titulo-seccion">EXPERIENCIA DE VOLUNTARIADO O DIRECCIÓN</div>
+        <div class="texto-seccion">
+            ¿Ha administrado un equipo de un club, liderado un proyecto para su organización benéfica favorita o ha editado el periódico de su centro educativo? Prosiga y describa las experiencias que ilustran sus habilidades de dirección.
+        </div>
     </div>
 
-    <!-- ===== PIE DE CONTACTO ===== -->
+    <!-- ============================================================ -->
+    <!-- PIE DE CONTACTO -->
+    <!-- ============================================================ -->
     <div class="contacto">
-        <span>📞 +34 123 456 789</span>
-        <span>✉️ <a href="mailto:tu@email.com">tu@email.com</a></span>
-        <span>🔗 <a href="#">linkedin.com/in/tuperfil</a></span>
-        <span>🐙 <a href="#">github.com/tuusuario</a></span>
-        <span>📍 Ciudad, País</span>
+        <span class="contacto-item">📞 +34 123 456 789</span>
+        <span class="contacto-item">✉️ <a href="mailto:tu@email.com">tu@email.com</a></span>
+        <span class="contacto-item">🔗 <a href="#">linkedin.com/in/tuperfil</a></span>
+        <span class="contacto-item">🐙 <a href="#">github.com/tuusuario</a></span>
+        <span class="contacto-item">📍 Ciudad, País</span>
     </div>
 
 </div>
