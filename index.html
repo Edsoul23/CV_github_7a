@@ -1,294 +1,231 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Currículum Vitae</title>
-  <!-- Bulma CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
-  <!-- Font Awesome (opcional) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    /* Estilos para replicar el formato de la imagen (CV clásico, limpio) */
-    body {
-      background-color: #eef2f7;
-      padding: 2rem 1rem;
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    }
-    .cv-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      background-color: #ffffff;
-      padding: 2.8rem 3rem 2.5rem;
-      border-radius: 8px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-    }
-    /* Encabezado: igual a la imagen */
-    .cv-header {
-      border-bottom: 2px solid #dce1e8;
-      padding-bottom: 1.2rem;
-      margin-bottom: 1.8rem;
-    }
-    .cv-header .name {
-      font-size: 2.8rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      color: #1a2634;
-      margin-bottom: 0.2rem;
-      line-height: 1.2;
-    }
-    .cv-header .subhead {
-      font-size: 1.05rem;
-      font-weight: 400;
-      color: #2c3e50;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      gap: 0.4rem 1rem;
-      margin-top: 0.1rem;
-    }
-    .cv-header .subhead .links a {
-      color: #2b6c9e;
-      text-decoration: none;
-      font-weight: 500;
-      margin: 0 0.15rem;
-    }
-    .cv-header .subhead .links a:hover {
-      text-decoration: underline;
-    }
-    /* Estilo de cada sección: similar a la imagen (títulos en negrita y con formato) */
-    .section {
-      margin-bottom: 2rem;
-    }
-    .section-title {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #1a2634;
-      letter-spacing: 0.5px;
-      margin-bottom: 0.4rem;
-      border-bottom: 1px solid #dce1e8;
-      padding-bottom: 0.2rem;
-      text-transform: uppercase;
-    }
-    .section-title i {
-      margin-right: 0.5rem;
-      color: #2b6c9e;
-      width: 1.6rem;
-    }
-    /* Párrafos y contenido */
-    .content-block {
-      margin-bottom: 1.2rem;
-    }
-    .content-block p {
-      margin-bottom: 0.2rem;
-      font-size: 0.98rem;
-      line-height: 1.5;
-      color: #1e2b3c;
-    }
-    .entry {
-      margin-bottom: 1.4rem;
-    }
-    .entry-header {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 0.15rem;
-      font-weight: 600;
-      font-size: 1rem;
-      color: #1a2634;
-    }
-    .entry-header .title {
-      font-weight: 700;
-    }
-    .entry-header .date {
-      font-weight: 400;
-      color: #3e5a70;
-      background: #eef2f7;
-      padding: 0.1rem 0.7rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-    }
-    .entry-desc {
-      font-size: 0.95rem;
-      line-height: 1.5;
-      color: #1e2b3c;
-      padding-left: 0.2rem;
-      margin-top: 0.1rem;
-    }
-    .entry-desc ul {
-      list-style: disc;
-      padding-left: 1.4rem;
-      margin-top: 0.2rem;
-    }
-    .entry-desc ul li {
-      margin-bottom: 0.15rem;
-    }
-    /* Pie de contacto: igual a la tabla de la imagen */
-    .footer-contact {
-      margin-top: 2.8rem;
-      border-top: 2px solid #dce1e8;
-      padding-top: 1.5rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 0.8rem 1.8rem;
-      font-size: 0.95rem;
-      color: #1e2b3c;
-    }
-    .footer-contact .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .footer-contact .contact-item i {
-      color: #2b6c9e;
-      width: 1.3rem;
-      text-align: center;
-      font-size: 1rem;
-    }
-    .footer-contact a {
-      color: #2b6c9e;
-      text-decoration: none;
-    }
-    .footer-contact a:hover {
-      text-decoration: underline;
-    }
-    /* Ajustes responsive */
-    @media (max-width: 768px) {
-      .cv-container {
-        padding: 1.8rem 1.2rem;
-      }
-      .cv-header .name {
-        font-size: 2.2rem;
-      }
-      .entry-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.1rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículum Vitae</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <style>
+        body {
+            background-color: #f5f6fa;
+            padding: 40px 20px;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .cv-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px 60px 45px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border-radius: 6px;
+        }
+
+        /* ===== ENCABEZADO ===== */
+        .name {
+            font-size: 40px;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: 0.3px;
+            margin-bottom: 2px;
+        }
+
+        .subhead {
+            font-size: 16px;
+            color: #2c3e50;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .subhead a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .subhead a:hover {
+            text-decoration: underline;
+        }
+
+        .divider-line {
+            border: none;
+            border-top: 2px solid #d0d7e0;
+            margin: 16px 0 22px 0;
+        }
+
+        /* ===== SECCIONES ===== */
+        .section {
+            margin-bottom: 26px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #d0d7e0;
+            padding-bottom: 4px;
+            margin-bottom: 10px;
+        }
+
+        .section-text {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #1e2b3c;
+        }
+
+        /* ===== ENTRADAS ===== */
+        .entry {
+            margin-bottom: 18px;
+        }
+
+        .entry-headline {
+            font-weight: 700;
+            font-size: 15px;
+            color: #1a1a1a;
+            margin-bottom: 1px;
+        }
+
+        .entry-detail {
+            font-size: 15px;
+            line-height: 1.5;
+            color: #1e2b3c;
+            padding-left: 2px;
+        }
+
+        .entry-detail ul {
+            margin-top: 3px;
+            padding-left: 22px;
+            list-style: disc;
+        }
+
+        .entry-detail ul li {
+            margin-bottom: 2px;
+        }
+
+        /* ===== PIE DE CONTACTO ===== */
+        .footer-contact {
+            margin-top: 30px;
+            padding-top: 18px;
+            border-top: 2px solid #d0d7e0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 35px;
+            font-size: 14px;
+            color: #1e2b3c;
+        }
+
+        .footer-contact span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .footer-contact a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .footer-contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .cv-container {
+                padding: 30px 25px;
+            }
+            .name {
+                font-size: 32px;
+            }
+        }
+    </style>
 </head>
 <body>
 
 <div class="cv-container">
-  <!-- ENCABEZADO: nombre + profesión + vínculos (exactamente como la imagen) -->
-  <header class="cv-header">
+
+    <!-- ===== ENCABEZADO ===== -->
     <div class="name">SU NOMBRE</div>
     <div class="subhead">
-      <span><strong>PROFESIÓN O SECTOR</strong></span>
-      <span class="links">
-        <a href="#"><i class="fas fa-briefcase"></i> cartera</a>
-        <a href="#"><i class="fas fa-globe"></i> sitio web</a>
-        <a href="#"><i class="fas fa-blog"></i> blog</a>
-      </span>
-    </div>
-  </header>
-
-  <!-- OBJETIVO -->
-  <section class="section">
-    <div class="section-title"><i class="fas fa-bullseye"></i> OBJETIVO</div>
-    <div class="content-block">
-      <p>Para empezar, haga clic en el texto de marcador de posición y empiece a escribir. Sea breve: una o dos frases.</p>
-      <p style="font-size:0.92rem; color:#3a4d62;">Haga doble clic en las celdas de la tabla del pie de página para agregar la información de contacto (o elimine las columnas que no desee).</p>
-    </div>
-  </section>
-
-  <!-- APTITUDES -->
-  <section class="section">
-    <div class="section-title"><i class="fas fa-star"></i> APTITUDES</div>
-    <div class="content-block">
-      <p>Explique en qué es especialmente bueno. ¿Qué es lo que lo diferencia? Use su propio idioma, no jergas.</p>
-      <!-- Ejemplo de etiquetas de habilidades (opcional) pero manteniendo el texto principal -->
-      <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.4rem;">
-        <span style="background:#eef2f7; padding:0.2rem 1rem; border-radius:30px; font-size:0.9rem; border:1px solid #d0d9e4;">Comunicación</span>
-        <span style="background:#eef2f7; padding:0.2rem 1rem; border-radius:30px; font-size:0.9rem; border:1px solid #d0d9e4;">Liderazgo</span>
-        <span style="background:#eef2f7; padding:0.2rem 1rem; border-radius:30px; font-size:0.9rem; border:1px solid #d0d9e4;">Resolución</span>
-        <span style="background:#eef2f7; padding:0.2rem 1rem; border-radius:30px; font-size:0.9rem; border:1px solid #d0d9e4;">Trabajo en equipo</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCIA -->
-  <section class="section">
-    <div class="section-title"><i class="fas fa-briefcase"></i> EXPERIENCIA</div>
-    
-    <div class="entry">
-      <div class="entry-header">
-        <span class="title">PUESTO • COMPAÑÍA • FECHA DE INICIO – FECHA DE FINALIZACIÓN</span>
-      </div>
-      <div class="entry-desc">
-        Realice un resumen de sus responsabilidades principales, de sus cargos directivos y de sus logros más destacados. No lo indique todo; incluya solo los datos relevantes que muestren la eficacia de su trabajo.
-        <ul>
-          <li>Logro clave 1: impacto medible o responsabilidad relevante.</li>
-          <li>Logro clave 2: liderazgo de equipos o proyectos importantes.</li>
-        </ul>
-      </div>
+        <strong>PROFESIÓN O SECTOR | VÍNCULO A OTRAS PROPIEDADES EN LÍNEA:</strong>
+        <a href="#">cartera</a>, <a href="#">sitio web</a> o <a href="#">blog</a>
     </div>
 
-    <div class="entry">
-      <div class="entry-header">
-        <span class="title">PUESTO • COMPAÑÍA • FECHA DE INICIO – FECHA DE FINALIZACIÓN</span>
-      </div>
-      <div class="entry-desc">
-        Piense en el tamaño del equipo que ha dirigido, el número de proyectos en los que ha trabajado o el número de artículos que ha escrito.
-        <ul>
-          <li>Dirección de equipo de X personas.</li>
-          <li>Más de Y proyectos completados con éxito.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    <hr class="divider-line">
 
-  <!-- FORMACIÓN -->
-  <section class="section">
-    <div class="section-title"><i class="fas fa-graduation-cap"></i> FORMACIÓN</div>
-    
-    <div class="entry">
-      <div class="entry-header">
-        <span class="title">TITULACIÓN • FECHA DE OBTENCIÓN • CENTRO EDUCATIVO</span>
-      </div>
-      <div class="entry-desc">
-        Puede incluir su calificación promedio y un resumen de los trabajos de clase, los premios y las matrículas de honor relevantes.
-      </div>
+    <!-- ===== OBJETIVO ===== -->
+    <div class="section">
+        <div class="section-title">OBJETIVO</div>
+        <div class="section-text">
+            Para empezar, haga clic en el texto de marcador de posición y empiece a escribir. Sea breve: una o dos frases.<br>
+            <span style="font-size:14px; color:#4a5b6e;">Haga doble clic en las celdas de la tabla del pie de página para agregar la información de contacto (o elimine las columnas que no desee).</span>
+        </div>
     </div>
 
-    <div class="entry">
-      <div class="entry-header">
-        <span class="title">TITULACIÓN • FECHA DE OBTENCIÓN • CENTRO EDUCATIVO</span>
-      </div>
-      <div class="entry-desc">
-        Vaya al grupo Estilos, que encontrará en la pestaña Inicio de la cinta de opciones, para aplicar el formato que necesite en un simple clic.
-      </div>
+    <!-- ===== APTITUDES ===== -->
+    <div class="section">
+        <div class="section-title">APTITUDES</div>
+        <div class="section-text">
+            Explique en qué es especialmente bueno. ¿Qué es lo que lo diferencia? Use su propio idioma, no jergas.
+        </div>
     </div>
-  </section>
 
-  <!-- VOLUNTARIADO O DIRECCIÓN -->
-  <section class="section">
-    <div class="section-title"><i class="fas fa-hand-holding-heart"></i> EXPERIENCIA DE VOLUNTARIADO O DIRECCIÓN</div>
-    <div class="content-block">
-      <p>¿Ha administrado un equipo de un club, liderado un proyecto para su organización benéfica favorita o ha editado el periódico de su centro educativo? Prosiga y describa las experiencias que ilustran sus habilidades de dirección.</p>
-    </div>
-    <div class="entry" style="margin-top: 0.2rem;">
-      <div class="entry-header">
-        <span class="title">ROL • ORGANIZACIÓN • AÑO – AÑO</span>
-      </div>
-      <div class="entry-desc">
-        Breve descripción de su contribución y el impacto generado.
-      </div>
-    </div>
-  </section>
+    <!-- ===== EXPERIENCIA ===== -->
+    <div class="section">
+        <div class="section-title">EXPERIENCIA</div>
 
-  <!-- PIE DE CONTACTO (similar a la tabla de la imagen) -->
-  <footer class="footer-contact">
-    <span class="contact-item"><i class="fas fa-phone-alt"></i> +34 123 456 789</span>
-    <span class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:tu@email.com">tu@email.com</a></span>
-    <span class="contact-item"><i class="fab fa-linkedin"></i> <a href="#">linkedin.com/in/tuperfil</a></span>
-    <span class="contact-item"><i class="fab fa-github"></i> <a href="#">github.com/tuusuario</a></span>
-    <span class="contact-item"><i class="fas fa-map-pin"></i> Ciudad, País</span>
-  </footer>
-  <!-- Nota: elimine o modifique las columnas de contacto que no desee -->
+        <div class="entry">
+            <div class="entry-headline">PUESTO • COMPAÑÍA • FECHA DE INICIO – FECHA DE FINALIZACIÓN</div>
+            <div class="entry-detail">
+                Realice un resumen de sus responsabilidades principales, de sus cargos directivos y de sus logros más destacados. No lo indique todo; incluya solo los datos relevantes que muestren la eficacia de su trabajo.
+            </div>
+        </div>
+
+        <div class="entry">
+            <div class="entry-headline">PUESTO • COMPAÑÍA • FECHA DE INICIO – FECHA DE FINALIZACIÓN</div>
+            <div class="entry-detail">
+                Piense en el tamaño del equipo que ha dirigido, el número de proyectos en los que ha trabajado o el número de artículos que ha escrito.
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FORMACIÓN ===== -->
+    <div class="section">
+        <div class="section-title">FORMACIÓN</div>
+
+        <div class="entry">
+            <div class="entry-headline">TITULACIÓN • FECHA DE OBTENCIÓN • CENTRO EDUCATIVO</div>
+            <div class="entry-detail">
+                Puede incluir su calificación promedio y un resumen de los trabajos de clase, los premios y las matrículas de honor relevantes.
+            </div>
+        </div>
+
+        <div class="entry">
+            <div class="entry-headline">TITULACIÓN • FECHA DE OBTENCIÓN • CENTRO EDUCATIVO</div>
+            <div class="entry-detail">
+                Vaya al grupo Estilos, que encontrará en la pestaña Inicio de la cinta de opciones, para aplicar el formato que necesite en un simple clic.
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== VOLUNTARIADO ===== -->
+    <div class="section">
+        <div class="section-title">EXPERIENCIA DE VOLUNTARIADO O DIRECCIÓN</div>
+        <div class="section-text">
+            ¿Ha administrado un equipo de un club, liderado un proyecto para su organización benéfica favorita o ha editado el periódico de su centro educativo? Prosiga y describa las experiencias que ilustran sus habilidades de dirección.
+        </div>
+    </div>
+
+    <!-- ===== PIE DE CONTACTO ===== -->
+    <div class="footer-contact">
+        <span>📞 +34 123 456 789</span>
+        <span>✉️ <a href="mailto:tu@email.com">tu@email.com</a></span>
+        <span>🔗 <a href="#">linkedin.com/in/tuperfil</a></span>
+        <span>🐙 <a href="#">github.com/tuusuario</a></span>
+        <span>📍 Ciudad, País</span>
+    </div>
+
 </div>
 
 </body>
