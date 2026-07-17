@@ -347,6 +347,33 @@
                 font-size: 40px;
             }
         }
+        .avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 55px;
+    color: white;
+    border: 4px solid #667eea;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    border-radius:50%;
+    display:block;
+}
     </style>
 </head>
 <body>
@@ -358,47 +385,52 @@
         <div class="cv-izquierda">
 
             <div class="avatar">
-                <i class="fas fa-user"></i>
+              <img src="img/foto.jpeg" alt="Foto de perfil">
             </div>
+            
+            
 
-            <div class="nombre">SU NOMBRE</div>
+            <div class="nombre">Erick Eduardo Hernández Ariza</div>
             <div class="profesion">
-                <strong>PROFESIÓN O SECTOR</strong><br>
-                <a href="#"><i class="fas fa-briefcase"></i> cartera</a> -
-                <a href="#"><i class="fas fa-globe"></i> sitio web</a> -
-                <a href="#"><i class="fas fa-blog"></i> blog</a>
-            </div>
+    <strong>Estudiante de Ingeniería en Sistemas Computacionales</strong><br>
+    <a href="#"><i class="fas fa-briefcase"></i> Portafolio</a> -
+    <a href="#"><i class="fas fa-globe"></i> Sitio Web</a> -
+    <a href="#"><i class="fas fa-code"></i> Edsoul23</a>
+</div>
 
             <!-- CONTACTO -->
             <div class="seccion-titulo"><i class="fas fa-address-card"></i> CONTACTO</div>
             <div class="contacto-item">
-                <i class="fas fa-phone"></i> +34 123 456 789
+                <i class="fas fa-phone"></i> +52 461 359 5863
             </div>
             <div class="contacto-item">
-                <i class="fas fa-envelope"></i> <a href="mailto:tu@email.com">tu@email.com</a>
+                <i class="fas fa-envelope"></i> <a href="mailto:tu@email.com">Edsoulhrz@email.com</a>
             </div>
             <div class="contacto-item">
-                <i class="fab fa-linkedin"></i> <a href="#">linkedin.com/in/tuperfil</a>
+                <i class="fab fa-linkedin"></i> <a href="#"></a>
             </div>
             <div class="contacto-item">
-                <i class="fab fa-github"></i> <a href="#">github.com/tuusuario</a>
+                <i class="fab fa-github"></i> <a href="#">github.com/Edsoul23</a>
             </div>
             <div class="contacto-item">
-                <i class="fas fa-map-marker-alt"></i> Ciudad, País
+                <i class="fas fa-map-marker-alt"></i> Celaya, Guanajuato, México
             </div>
 
             <!-- APTITUDES -->
             <div class="seccion-titulo"><i class="fas fa-star"></i> APTITUDES</div>
             <div class="texto" style="font-size:14px; line-height:1.6; color:#dfe6e9; margin-bottom:12px;">
-                Explique en qué es especialmente bueno. ¿Qué es lo que lo diferencia?<br>
-                Use su propio idioma, no jergas.
-            </div>
+Estudiante apasionado por el desarrollo de software, la programación y la resolución de problemas. Me adapto rápidamente a nuevas tecnologías y disfruto participar en proyectos donde pueda aprender y aportar soluciones eficientes.
+</div>
             <div>
-                <span class="habilidad-tag"><i class="fas fa-comment"></i> Comunicación</span>
-                <span class="habilidad-tag"><i class="fas fa-users"></i> Liderazgo</span>
-                <span class="habilidad-tag"><i class="fas fa-brain"></i> Resolución</span>
-                <span class="habilidad-tag"><i class="fas fa-handshake"></i> Trabajo en equipo</span>
-                <span class="habilidad-tag"><i class="fas fa-lightbulb"></i> Creatividad</span>
+               <span class="habilidad-tag"><i class="fas fa-brain"></i> Resolución de problemas</span>
+
+<span class="habilidad-tag"><i class="fas fa-users"></i> Trabajo en equipo</span>
+
+<span class="habilidad-tag"><i class="fas fa-book"></i> Aprendizaje autodidacta</span>
+
+<span class="habilidad-tag"><i class="fas fa-code"></i> Programación</span>
+
+<span class="habilidad-tag"><i class="fas fa-lightbulb"></i> Pensamiento lógico</span>
             </div>
 
         </div>
@@ -408,54 +440,65 @@
 
             <!-- OBJETIVO -->
             <div class="seccion-titulo"><i class="fas fa-bullseye"></i> OBJETIVO</div>
-            <div class="texto-seccion">
-                Para empezar, haga clic en el texto de marcador de posición y empiece a escribir. Sea breve: una o dos frases.<br>
-                <small>Haga doble clic en las celdas de la tabla del pie de página para agregar la información de contacto (o eliminar la información que no desee).</small>
-            </div>
+           <div class="texto-seccion">
+Estudiante de Ingeniería en Sistemas Computacionales con conocimientos en desarrollo web, programación, bases de datos e inteligencia artificial. Busco una oportunidad para aplicar mis conocimientos, fortalecer mis habilidades profesionales y contribuir al desarrollo de soluciones tecnológicas innovadoras.
+</div>
 
             <!-- EXPERIENCIA -->
             <div class="seccion-titulo"><i class="fas fa-briefcase"></i> EXPERIENCIA</div>
 
             <div class="entrada">
-                <div class="entrada-titulo">PUESTO • COMPAÑÍA</div>
-                <div class="entrada-fecha"><i class="far fa-calendar-alt"></i> FECHA DE INICIO – FECHA DE FINALIZACIÓN</div>
-                <div class="entrada-descripcion">
-                    Realice un resumen de sus responsabilidades principales, de sus cargos directivos y de sus logros más destacados. No lo indique todo; incluya solo los datos relevantes que muestren la eficacia de su trabajo.
-                </div>
-            </div>
+    <div class="entrada-titulo">
+        Proyecto Académico • Sistema Web AutoVolt
+    </div>
+
+    <div class="entrada-fecha">
+        <i class="far fa-calendar-alt"></i>
+        Proyecto Universitario
+    </div>
+
+    <div class="entrada-descripcion">
+        Desarrollo de un sistema web para la administración de una empresa dedicada a baterías automotrices utilizando PHP, HTML, CSS, JavaScript y bases de datos MySQL/SQL Server.
+    </div>
+</div>
 
             <div class="entrada">
-                <div class="entrada-titulo">PUESTO • COMPAÑÍA</div>
-                <div class="entrada-fecha"><i class="far fa-calendar-alt"></i> FECHA DE INICIO – FECHA DE FINALIZACIÓN</div>
-                <div class="entrada-descripcion">
-                    Piense en el tamaño del equipo que ha dirigido, el número de proyectos en los que ha trabajado o el número de artículos que ha escrito.
-                </div>
-            </div>
+    <div class="entrada-titulo">
+        Proyecto Académico • Inteligencia Artificial
+    </div>
+
+    <div class="entrada-fecha">
+        <i class="far fa-calendar-alt"></i>
+        Proyecto Universitario
+    </div>
+
+    <div class="entrada-descripcion">
+        Desarrollo de un sistema de reconocimiento de lenguaje de señas mediante visión por computadora utilizando Python y TensorFlow.
+    </div>
+</div>
 
             <!-- FORMACIÓN -->
             <div class="seccion-titulo"><i class="fas fa-graduation-cap"></i> FORMACIÓN</div>
 
             <div class="entrada">
-                <div class="entrada-titulo">TITULACIÓN • CENTRO EDUCATIVO</div>
-                <div class="entrada-fecha"><i class="far fa-calendar-alt"></i> FECHA DE OBTENCIÓN</div>
-                <div class="entrada-descripcion">
-                    Puede incluir su calificación y promedio y un resumen de los trabajos de clase, los premios y las matrículas de honor relevantes.
-                </div>
-            </div>
+    <div class="entrada-titulo">
+        Ingeniería en Sistemas Computacionales • Tecnológico Nacional de México Campus Celaya
+    </div>
 
-            <div class="entrada">
-                <div class="entrada-titulo">TITULACIÓN • CENTRO EDUCATIVO</div>
-                <div class="entrada-fecha"><i class="far fa-calendar-alt"></i> FECHA DE OBTENCIÓN</div>
-                <div class="entrada-descripcion">
-                    Vaya al grupo Estilos, que encontrará en la pestaña Inicio de la cinta de opciones, para aplicar el formato que necesite en un simple clic.
-                </div>
-            </div>
+    <div class="entrada-fecha">
+        <i class="far fa-calendar-alt"></i>
+        En curso
+    </div>
 
-            <!-- VOLUNTARIADO -->
-            <div class="seccion-titulo"><i class="fas fa-hand-holding-heart"></i> VOLUNTARIADO O DIRECCIÓN</div>
+    <div class="entrada-descripcion">
+        Formación enfocada en programación, desarrollo de software, bases de datos, inteligencia artificial, arquitectura de computadoras, desarrollo móvil y análisis de sistemas.
+    </div>
+</div>
+
+
             <div class="texto-seccion">
-                ¿Ha administrado un equipo de un club, liderado un proyecto para su organización benéfica favorita o ha editado el periódico de su centro educativo? Prosiga y describa las experiencias que ilustran sus habilidades de dirección.
-            </div>
+Participación en diversos proyectos académicos enfocados al desarrollo de aplicaciones web y móviles, diseño de bases de datos, inteligencia artificial y desarrollo de software, fortaleciendo habilidades de trabajo colaborativo, investigación y resolución de problemas.
+</div>
 
         </div>
 
